@@ -1,4 +1,4 @@
-package com.qxm.qxmbrowser;
+package com.qxm.qxmbrowser.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.qxm.qxmbrowser.R;
+
+//TODO 1. 清除界面，仿照作出滑屏组件和下滑组件，左右组件，等
 public class BrowserActivity extends AppCompatActivity {
 
     @Override
