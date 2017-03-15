@@ -1,0 +1,10 @@
+<litepal>
+
+    <dbname value="cool_weather"/>
+    <version value="1"/>
+    <list>
+        <mapping class="com.qxm.qxmbrowser.weather.db.Province"/>
+        <mapping class="com.qxm.qxmbrowser.weather.db.City"/>
+        <mapping class="com.qxm.qxmbrowser.weather.db.Country"/>
+    </list>
+</litepal>

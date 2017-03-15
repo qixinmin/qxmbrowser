@@ -36,7 +36,7 @@ public class BrowserActivity extends AppCompatActivity {
         mRecyclerViewCenter = (RecyclerView) findViewById(R.id.recycler_view_center);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecyclerViewCenter.setLayoutManager(linearLayoutManager);
 
         mRecyclerViewCenter.setAdapter(new HomeAdapter());
