@@ -4,11 +4,22 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
+
         config {
-            keyAlias 'android.keystore'
-            keyPassword 'qxmin1984'
-            storeFile file('/Users/xinmin/codes/qxmbrowser/android.keystore')
-            storePassword 'qxmin1984'
+
+            try {
+                File signFile = rootProject.file('sign.properties');
+                Properties p = new Properties()
+                p.load(new FileInputStream(signFile))
+
+                storeFile file("${project.rootDir}/android.keystore")
+                storePassword p.keyPassword
+                keyAlias p.keyAlias
+                keyPassword p.keyPassword
+            } catch (ex) {
+                throw new Exception("You should define KEYSTORE_PASSWORD and " +
+                        "KEY_PASSWORD in sign.properties.")
+            }
         }
     }
     compileSdkVersion 25
@@ -22,6 +33,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+        }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
