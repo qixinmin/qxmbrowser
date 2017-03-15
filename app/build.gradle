@@ -35,11 +35,18 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+
+            //可以自定义一些字段，在编译阶段就可以使用，并在代码中使用， 使用方式是BuildConfig.BOOLEAN_TEST
+            buildConfigField "boolean", "BOOLEAN_TEST", "true"
+            buildConfigField 'String',  'STRING_TEST',      "\"Debug string test\""
         }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
+
+            buildConfigField "boolean", "BOOLEAN_TEST", "false"
+            buildConfigField 'String',  'STRING_TEST',      "\"Relase string test\""
         }
     }
 }
